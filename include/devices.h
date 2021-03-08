@@ -6,8 +6,6 @@ extern pros::Motor leftMotorA;
 extern pros::Motor leftMotorB;
 extern pros::Motor rightMotorA;
 extern pros::Motor rightMotorB;
-extern okapi::MotorGroup leftDriveSmart;
-extern okapi::MotorGroup rightDriveSmart;
 extern pros::Motor leftArmMotor;
 extern pros::Motor rightArmMotor;
 extern pros::Motor leftUpwards;

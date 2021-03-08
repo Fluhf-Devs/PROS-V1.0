@@ -11,9 +11,6 @@ void initialize() {
 	pros::Motor leftMotorB (9, MOTOR_GEARSET_18, false, MOTOR_ENCODER_DEGREES);
 	pros::Motor rightMotorA (1, MOTOR_GEARSET_18, false, MOTOR_ENCODER_DEGREES);
 	pros::Motor rightMotorB (8, MOTOR_GEARSET_18, false, MOTOR_ENCODER_DEGREES);
-	// initialize motor groups
-	okapi::MotorGroup leftDriveSmart (pros::Motor leftMotorA, pros::Motor leftMotorB);
-	okapi::MotorGroup rightDriveSmart (pros::Motor rightMotorA, pros::Motor rightMotorB);
 	// intake motors
 	pros::Motor leftArmMotor (2, MOTOR_GEARSET_18, true, MOTOR_ENCODER_DEGREES);
 	pros::Motor rightArmMotor (20, MOTOR_GEARSET_18, false, MOTOR_ENCODER_DEGREES);
