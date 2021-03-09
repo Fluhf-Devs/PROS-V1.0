@@ -16,7 +16,7 @@ int OPcontrol() {
     } else if (master.get_digital(DIGITAL_L2)) {
       outakeControl(-400);
     } else {
-      outakeControl(0);
+      outakeStop();
     }
   }
   return 0;

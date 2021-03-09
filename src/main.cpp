@@ -8,11 +8,10 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
+	testDisplay();
 	pros::Task controllerDrive(controllerDriveControl);
-	pros::Task oPcontrol(OPcontrol);
 	pros::Task brainDisplay(brainScreen);
 	pros::Task controllerDisplay(controllerScreen);
-	pros::Task customTime(customTimerWorker);
 }
 
 /**
@@ -37,4 +36,9 @@ void competition_initialize() {}
 
 void autonomous() {
 
+}
+
+void opcontrol() {
+	//pros::Task oPcontrol(OPcontrol);
+	pros::Task customTime(customTimerWorker);
 }

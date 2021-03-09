@@ -62,7 +62,9 @@ extern double customTimerArc;
 
 // autonomous selector variables
 extern bool isSkills;
+extern bool startRight;
 extern int compAutoSelector;
 
 // Display non-return funtions
 void controllerShake();
+void testDisplay();
