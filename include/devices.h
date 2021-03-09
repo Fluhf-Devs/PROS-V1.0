@@ -37,6 +37,9 @@ void setPID(bool isTurning, double val1);
 // tasks to be run
 int controllerDriveControl();
 int OPcontrol();
+int brainScreen();
+int controllerScreen();
+int customTimerWorker();
 
 // PID variables
 extern double kP;
@@ -49,3 +52,17 @@ extern bool resetDriveSensors;
 extern bool enableDrivePID;
 extern double slewPercent;
 extern double slewTurnPercent;
+
+// Display variables
+extern int customTimer;
+extern int customTimerStart;
+extern double drivetrainTemp;
+extern double batteryCapacity;
+extern double customTimerArc;
+
+// autonomous selector variables
+extern bool isSkills;
+extern int compAutoSelector;
+
+// Display non-return funtions
+void controllerShake();

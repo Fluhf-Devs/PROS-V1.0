@@ -40,6 +40,7 @@
 
 #include "api.h"
 #include "okapi/api.hpp"
+#include "pros/apix.h"
 
 /**
  * You should add more #includes here

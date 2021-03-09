@@ -52,7 +52,6 @@
 #include "pros/distance.h"
 #include "pros/ext_adi.h"
 #include "pros/imu.h"
-#include "pros/llemu.h"
 #include "pros/misc.h"
 #include "pros/motors.h"
 #include "pros/optical.h"

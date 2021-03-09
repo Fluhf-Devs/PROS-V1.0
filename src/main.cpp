@@ -9,8 +9,10 @@
  */
 void initialize() {
 	pros::Task controllerDrive(controllerDriveControl);
-	pros::lcd::initialize();
 	pros::Task oPcontrol(OPcontrol);
+	pros::Task brainDisplay(brainScreen);
+	pros::Task controllerDisplay(controllerScreen);
+	pros::Task customTime(customTimerWorker);
 }
 
 /**
@@ -19,7 +21,7 @@ void initialize() {
  * the robot is enabled, this task will exit.
  */
 void disabled() {
-	
+
 }
 
 /**
