@@ -1,4 +1,5 @@
 #include "main.h"
+
 // Vex devices
 extern pros::Controller master;
 extern pros::Controller partner;
@@ -14,3 +15,37 @@ extern pros::ADIAnalogIn leftBumper;
 extern pros::ADIAnalogIn rightBumper;
 extern pros::ADIAnalogIn limitSwitchC;
 extern pros::ADIAccelerometer accel2G;
+
+// outakeControl functions
+void outakeControl(const std::int32_t velocity);
+void outakeStop();
+
+// intakeControl functions
+void intakeControl(const std::int32_t velocity);
+void intakeStop();
+
+// drivetrainControl
+void DrivetrainLateral(const std::int32_t velocity);
+void DrivetrainTurn(const std::int32_t velocity);
+void DrivetrainStop();
+
+// PID
+int drivePID();
+void setPID(bool isTurning, double val1, double val2);
+void setPID(bool isTurning, double val1);
+
+// tasks to be run
+int controllerDriveControl();
+int OPcontrol();
+
+// PID variables
+extern double kP;
+extern double turnKP;
+extern int desiredValue;
+extern int desiredTurnValue;
+extern bool startSlew;
+extern bool turning;
+extern bool resetDriveSensors;
+extern bool enableDrivePID;
+extern double slewPercent;
+extern double slewTurnPercent;

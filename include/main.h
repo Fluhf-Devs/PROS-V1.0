@@ -14,6 +14,10 @@
 
 #ifndef _PROS_MAIN_H_
 #define _PROS_MAIN_H_
+#define waitUntil(condition)                                                   \
+  do {                                                                         \
+    pros::delay(5);                                                             \
+  } while (!(condition))
 
 /**
  * If defined, some commonly used enums will have preprocessor macros which give
