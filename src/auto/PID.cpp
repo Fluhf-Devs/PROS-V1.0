@@ -44,10 +44,10 @@ int drivePID() {
   while (enableDrivePID) {
     if (resetDriveSensors) {
       resetDriveSensors = false;
-      leftMotorA.set_zero_position(0);
-      leftMotorB.set_zero_position(0);
-      rightMotorA.set_zero_position(0);
-      rightMotorB.set_zero_position(0);
+      leftMotorA.tare_position();
+      leftMotorB.tare_position();
+      rightMotorA.tare_position();
+      rightMotorB.tare_position();
     }
 
     // get the position of the motors
