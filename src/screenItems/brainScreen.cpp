@@ -28,6 +28,7 @@ lv_obj_t * myButtonLabel;
 lv_obj_t * myButtonLabel2;
 lv_obj_t * myLabel;
 lv_obj_t * myLabel2;
+lv_obj_t * tabview;
 
 lv_style_t myButtonStyleREL; //relesed style
 lv_style_t myButtonStylePR; //pressed style
@@ -124,8 +125,8 @@ static lv_res_t btn_click_action(lv_obj_t * btn)
     return LV_RES_OK;
 }
 
-static lv_res_t tabWorker(lv_obj_t * btn) {
-
+static lv_res_t tabWorker(lv_obj_t * tab) {
+  uint8_t id = lv_obj_get_free_num(btn);
 }
 
 void testDisplay() {
@@ -141,6 +142,7 @@ void testDisplay() {
   lv_obj_set_free_num(myButton, 0); //set button is to 0
   lv_btn_set_action(myButton, LV_BTN_ACTION_CLICK, btn_click_action); //set function to be called on button click
   lv_obj_align(myButton, NULL, LV_ALIGN_IN_TOP_LEFT, 0, 0); //set the position to top mid
+  lv_tabview_set_tab_load_action(lv_obj_t *tabview, lv_tabview_action_t action)
 
   myButtonLabel = lv_label_create(myButton, NULL); //create label and puts it inside of the button
   lv_label_set_text(myButtonLabel, "skills");
@@ -153,6 +155,25 @@ void testDisplay() {
 
   myButtonLabel2 = lv_label_create(myButton2, NULL); //create label and puts it inside of the button
   lv_label_set_text(myButtonLabel2, "left");
+
+
+
+  tabview = lv_tabview_create(lv_scr_act(), NULL);
+  /*Add 3 tabs (the tabs are page (lv_page) and can be scrolled*/
+  lv_obj_t *tab1 = lv_tabview_add_tab(tabview, "Tab 1");
+  lv_obj_t *tab2 = lv_tabview_add_tab(tabview, "Tab 2");
+  lv_obj_t *tab3 = lv_tabview_add_tab(tabview, "Tab 3");
+  /*Add content to the tabs*/
+  lv_obj_t * label = lv_label_create(tab1, NULL);
+  lv_label_set_text(label, "This the first tab\n\n"
+  "If the content\n"
+  "become too long\n"
+  "the tab become\n"
+  "scrollable\n\n");
+  label = lv_label_create(tab2, NULL);
+  lv_label_set_text(label, "Second tab");
+  label = lv_label_create(tab3, NULL);
+  lv_label_set_text(label, "Third tab");
 
 
 }
