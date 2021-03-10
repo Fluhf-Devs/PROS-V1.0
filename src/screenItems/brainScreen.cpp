@@ -11,7 +11,7 @@ void btnSetToggled(lv_obj_t * btn, bool toggled)
 
 
 // variables
-int customTimer = 60;
+int customTimer = 0;
 double dummy = 0;
 int customTimerStart = 0;
 double drivetrainTemp = 0;

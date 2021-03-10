@@ -2,8 +2,7 @@
 #include "devices.h"
 
 void skillsAdvancedAuto() {
-  // set custom timer to 60
-  //customTimer = 60;
+  customTimer = 60;
   // release the hood
   //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew
@@ -47,7 +46,7 @@ void skillsAdvancedAuto() {
 
   pros::delay(500);
 
-  setPID(true, 700);
+  setPID(true, 750);
 
   pros::delay(500);
 
@@ -73,7 +72,7 @@ void skillsAdvancedAuto() {
 
   pros::delay(1000);
 
-  setPID(true, 1250);
+  setPID(true, 1300);
 
   pros::delay(750);
 
@@ -83,7 +82,7 @@ void skillsAdvancedAuto() {
   pros::delay(2000);
 
   intakeStop();
-  setPID(true, -850);
+  setPID(true, -950);
 
   pros::delay(750);
 
@@ -91,14 +90,14 @@ void skillsAdvancedAuto() {
 
   pros::delay(750);
 
-  setPID(0, 0, 0.09);
+  setPID(false, 0, 0.09);
   outakeControl(600);
   pros::delay(600);;
   outakeStop();
 
   pros::delay(1000);
 
-  setPID(false, -600);
+  setPID(false, -800);
 
   pros::delay(750);
 
