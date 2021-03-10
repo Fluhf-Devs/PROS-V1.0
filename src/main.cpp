@@ -20,11 +20,36 @@ void disabled() {
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
- 
+
 void competition_initialize() {
 
 }
 
 void autonomous() {
-	skillsAdvancedAuto();
+  switch (auton_sel) {
+  // red right auton
+  case 1:
+
+    break;
+  // red left auton
+  case 2:
+
+    break;
+  // blue right auton
+  case 3:
+
+    break;
+  // blue left auton
+  case 4:
+
+    break;
+  // SkillsAuton1
+  case 5:
+    skillsAdvancedAuto();
+    break;
+  // SkillsAuton2
+  case 6:
+
+    break;
+  }
 }

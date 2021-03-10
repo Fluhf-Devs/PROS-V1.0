@@ -60,6 +60,7 @@ extern int customTimerStart;
 extern double drivetrainTemp;
 extern double batteryCapacity;
 extern double customTimerArc;
+extern int auton_sel;
 
 // autonomous selector variables
 extern bool isSkills;
@@ -68,4 +69,4 @@ extern int compAutoSelector;
 
 // Display non-return funtions
 void controllerShake();
-void testDisplay();
+void gui(void);

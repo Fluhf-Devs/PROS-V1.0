@@ -9,7 +9,8 @@
  */
 
 void initialize() {
-	testDisplay();
+	// display LVGL screen stuff
+	gui();
 	// run all necessary tasks
 	pros::Task controllerDrive(controllerDriveControl);
 	pros::Task PID(drivePID);
