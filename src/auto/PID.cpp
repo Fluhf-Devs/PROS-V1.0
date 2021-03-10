@@ -51,10 +51,10 @@ int drivePID() {
     }
 
     // get the position of the motors
-    int leftMotorAPosition = leftMotorA.get_encoder_units();
-    int leftMotorBPosition = leftMotorB.get_encoder_units();
-    int rightMotorAPosition = rightMotorA.get_encoder_units();
-    int rightMotorBPosition = rightMotorB.get_encoder_units();
+    int leftMotorAPosition = leftMotorA.get_position();
+    int leftMotorBPosition = leftMotorB.get_position();
+    int rightMotorAPosition = rightMotorA.get_position();
+    int rightMotorBPosition = rightMotorB.get_position();
 
     ///////////////////////////////////////////////////
     /// Lateral movement PID
