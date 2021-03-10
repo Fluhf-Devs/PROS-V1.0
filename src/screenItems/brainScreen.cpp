@@ -1,5 +1,6 @@
 #include "main.h"
 #include "devices.h"
+#include "display/lv_objx/lv_tabview.h"
 
 // stupid objects
 lv_obj_t * arc = lv_arc_create(lv_scr_act(), NULL);
@@ -125,9 +126,17 @@ static lv_res_t btn_click_action(lv_obj_t * btn)
     return LV_RES_OK;
 }
 
-static lv_res_t tabWorker(lv_obj_t * tab) {
-  uint8_t id = lv_obj_get_free_num(btn);
+//void lv_tv_action(lv_obj_t * tv, uint16_t id)
+//{
+//	printf("tab %d loaded\n", id);
+//}
+
+void lv_tv_action(lv_obj_t * tv, uint16_t act_id) {
+  printf("tab %d loaded\n", act_id);
 }
+
+
+
 
 void testDisplay() {
 
@@ -142,7 +151,6 @@ void testDisplay() {
   lv_obj_set_free_num(myButton, 0); //set button is to 0
   lv_btn_set_action(myButton, LV_BTN_ACTION_CLICK, btn_click_action); //set function to be called on button click
   lv_obj_align(myButton, NULL, LV_ALIGN_IN_TOP_LEFT, 0, 0); //set the position to top mid
-  lv_tabview_set_tab_load_action(lv_obj_t *tabview, lv_tabview_action_t action)
 
   myButtonLabel = lv_label_create(myButton, NULL); //create label and puts it inside of the button
   lv_label_set_text(myButtonLabel, "skills");
@@ -158,23 +166,14 @@ void testDisplay() {
 
 
 
-  tabview = lv_tabview_create(lv_scr_act(), NULL);
-  /*Add 3 tabs (the tabs are page (lv_page) and can be scrolled*/
-  lv_obj_t *tab1 = lv_tabview_add_tab(tabview, "Tab 1");
-  lv_obj_t *tab2 = lv_tabview_add_tab(tabview, "Tab 2");
-  lv_obj_t *tab3 = lv_tabview_add_tab(tabview, "Tab 3");
-  /*Add content to the tabs*/
-  lv_obj_t * label = lv_label_create(tab1, NULL);
-  lv_label_set_text(label, "This the first tab\n\n"
-  "If the content\n"
-  "become too long\n"
-  "the tab become\n"
-  "scrollable\n\n");
-  label = lv_label_create(tab2, NULL);
-  lv_label_set_text(label, "Second tab");
-  label = lv_label_create(tab3, NULL);
-  lv_label_set_text(label, "Third tab");
+  lv_obj_t * tv = lv_tabview_create(lv_scr_act(), NULL);
 
+  lv_tabview_set_tab_load_action(tv, lv_tv_action);
+  //lv_tabview_set_tab_load_action(tv, lv_tabview_action_t action)
+
+  lv_tabview_add_tab(tv, "one");
+  lv_tabview_add_tab(tv, "two");
+  lv_tabview_add_tab(tv, "tree");
 
 }
 
