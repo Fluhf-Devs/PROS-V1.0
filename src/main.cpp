@@ -10,10 +10,10 @@
 void initialize() {
 	testDisplay();
 	pros::Task controllerDrive(controllerDriveControl);
-	//pros::Task PID(drivePID);
 	pros::Task brainDisplay(brainScreen);
 	pros::Task controllerDisplay(controllerScreen);
 	pros::Task customTime(customTimerWorker);
+	pros::Task driveTrainPID(drivePID);
 }
 
 /**
@@ -37,10 +37,12 @@ void disabled() {
 void competition_initialize() {}
 
 void autonomous() {
+	enableDrivePID = true;
 	skillsAdvancedAuto();
 }
 
 void opcontrol() {
+	enableDrivePID = false;
 	while (true) {
 		if (master.get_digital(DIGITAL_R1)) {
 		  intakeControl(200);

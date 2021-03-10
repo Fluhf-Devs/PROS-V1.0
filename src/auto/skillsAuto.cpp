@@ -7,7 +7,6 @@ void skillsAdvancedAuto() {
   // release the hood
   //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew
-  pros::Task driveTrainPID(drivePID);
 
   // autonomous
   leftArmMotor.move_velocity(200);

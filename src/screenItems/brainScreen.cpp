@@ -124,6 +124,10 @@ static lv_res_t btn_click_action(lv_obj_t * btn)
     return LV_RES_OK;
 }
 
+static lv_res_t tabWorker(lv_obj_t * btn) {
+
+}
+
 void testDisplay() {
 
   // make an lmeter

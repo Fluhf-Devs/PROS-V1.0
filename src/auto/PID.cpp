@@ -30,7 +30,7 @@ bool turning = false;
 
 // variables that are part of stopping the PID
 bool resetDriveSensors = false;
-bool enableDrivePID = true;
+bool enableDrivePID = false;
 
 // variables that have to be created outside thread
 double lateralMotorPower = 0.0;
