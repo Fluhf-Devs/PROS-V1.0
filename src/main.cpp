@@ -1,20 +1,6 @@
 #include "main.h"
 #include "devices.h"
 
-/**
- * Runs initialization code. This occurs as soon as the program is started.
- *
- * All other competition modes are blocked by initialize; it is recommended
- * to keep execution time for this mode under a few seconds.
- */
-void initialize() {
-	testDisplay();
-	pros::Task controllerDrive(controllerDriveControl);
-	//pros::Task PID(drivePID);
-	pros::Task brainDisplay(brainScreen);
-	pros::Task controllerDisplay(controllerScreen);
-	pros::Task customTime(customTimerWorker);
-}
 
 /**
  * Runs while the robot is in the disabled state of Field Management System or
@@ -34,29 +20,11 @@ void disabled() {
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {}
+ 
+void competition_initialize() {
+
+}
 
 void autonomous() {
 	skillsAdvancedAuto();
-}
-
-void opcontrol() {
-	while (true) {
-		if (master.get_digital(DIGITAL_R1)) {
-		  intakeControl(200);
-		} else if (master.get_digital(DIGITAL_R2)) {
-	    intakeControl(-200);
-		} else {
-	    intakeControl(0);
-		}
-
-		if (master.get_digital(DIGITAL_L1)) {
-    	outakeControl(600);
-		} else if (master.get_digital(DIGITAL_L2)) {
-      outakeControl(-400);
-		} else {
-      outakeStop();
-		}
-		pros::delay(20);
-	}
 }

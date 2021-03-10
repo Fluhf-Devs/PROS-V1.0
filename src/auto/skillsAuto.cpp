@@ -3,8 +3,6 @@
 
 void skillsAdvancedAuto() {
   customTimer = 60;
-  // activate PID and slew
-  pros::Task driveTrainPID(drivePID);
 
   // autonomous
   leftArmMotor.move_velocity(200);
