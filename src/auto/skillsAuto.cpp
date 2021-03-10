@@ -3,7 +3,7 @@
 
 void skillsAdvancedAuto() {
   // set custom timer to 60
-  // customTimer = 60;
+  //customTimer = 60;
   // release the hood
   //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew

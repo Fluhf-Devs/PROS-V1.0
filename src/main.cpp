@@ -10,8 +10,10 @@
 void initialize() {
 	testDisplay();
 	pros::Task controllerDrive(controllerDriveControl);
+	//pros::Task PID(drivePID);
 	pros::Task brainDisplay(brainScreen);
 	pros::Task controllerDisplay(controllerScreen);
+	pros::Task customTime(customTimerWorker);
 }
 
 /**
@@ -35,10 +37,26 @@ void disabled() {
 void competition_initialize() {}
 
 void autonomous() {
-
+	skillsAdvancedAuto();
 }
 
 void opcontrol() {
-	//pros::Task oPcontrol(OPcontrol);
-	pros::Task customTime(customTimerWorker);
+	while (true) {
+		if (master.get_digital(DIGITAL_R1)) {
+		  intakeControl(200);
+		} else if (master.get_digital(DIGITAL_R2)) {
+	    intakeControl(-200);
+		} else {
+	    intakeControl(0);
+		}
+
+		if (master.get_digital(DIGITAL_L1)) {
+    	outakeControl(600);
+		} else if (master.get_digital(DIGITAL_L2)) {
+      outakeControl(-400);
+		} else {
+      outakeStop();
+		}
+		pros::delay(20);
+	}
 }
