@@ -26,6 +26,10 @@ void competition_initialize() {
 }
 
 void autonomous() {
+  // run pre-autonomous
+  pre_Auton();
+
+  // select which autonomous to run
   switch (auton_sel) {
   // red right auton
   case 1:

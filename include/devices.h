@@ -33,7 +33,10 @@ void DrivetrainStop();
 int drivePID();
 void setPID(bool isTurning, double val1, double val2);
 void setPID(bool isTurning, double val1);
+
+// Autonomous functions
 void skillsAdvancedAuto();
+void pre_Auton();
 
 // tasks to be run
 int controllerDriveControl();

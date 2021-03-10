@@ -10,10 +10,5 @@ int controllerScreen() {
 
     pros::delay(115);
   }
-
-
-
-
-
   return 0;
 }
