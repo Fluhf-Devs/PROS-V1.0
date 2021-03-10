@@ -3,8 +3,6 @@
 
 void skillsAdvancedAuto() {
   customTimer = 60;
-  // release the hood
-  //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew
   pros::Task driveTrainPID(drivePID);
 
@@ -97,9 +95,47 @@ void skillsAdvancedAuto() {
 
   pros::delay(1000);
 
+
+
+/////////////////////////////////////////////////////////////////////////////
+// experimental 5th goal, not tested
+///////////////////////////////////////////////
+
+
+
+
+
+
   setPID(false, -800);
 
   pros::delay(750);
 
-  setPID(true, 800);
+  setPID(true, 900);
+
+  pros::delay(750);
+
+  intakeControl(200);
+  setPID(false, 1900);
+
+  pros::delay(2000);
+
+  intakeStop();
+  setPID(false, 0);
+
+  pros::delay(500);
+
+  setPID(true, -700);
+
+  pros::delay(750);
+
+  setPID(false, 1500);
+
+  pros::delay(1500);
+
+  setPID(false, 0);
+  outakeControl(600);
+
+  pros::delay(2000);
+
+  outakeStop();
 }
