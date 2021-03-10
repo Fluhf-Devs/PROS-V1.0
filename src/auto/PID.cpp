@@ -76,7 +76,7 @@ int drivePID() {
     //////////////////////////////////////
 
     // get average of the four motors
-    int turnDifference = ((leftMotorAPosition + leftMotorBPosition)/2) - ((rightMotorAPosition + rightMotorBPosition)/2);
+    int turnDifference = ((leftMotorAPosition + leftMotorBPosition) - (rightMotorAPosition + rightMotorBPosition))/2;
 
     // Potential
     turnError = desiredTurnValue - turnDifference;
@@ -94,17 +94,18 @@ int drivePID() {
     // slew
     ////////////////////////////////////
 
-    if(startSlew) {
-      // lateral Slew
-      if (turning == false) {
-          slew = (lateralMotorPower / 100) * slewPercent;
-          if(slewPercent < 100) {
-             slewPercent += 10;
-          }
-      } else if (turning) {
-          turnSlew = (turnMotorPower / 100) * slewTurnPercent;
+    if (startSlew) {
+      // turning slew
+      if (turning) {
+        turnSlew = (turnMotorPower / 100) * slewTurnPercent;
           if(slewTurnPercent < 100) {
               slewTurnPercent += 10;
+          }
+      } else {
+          // laterl slew
+          slew = (lateralMotorPower / 100) * slewPercent;
+          if(slewPercent < 100) {
+            slewPercent += 10;
           }
       }
     }

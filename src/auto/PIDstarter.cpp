@@ -12,7 +12,7 @@ void setPID(bool isTurning, double val1, double val2) {
     turnKP = val2;
     desiredValue = 0;
     desiredTurnValue = val1;
-  } else if (isTurning == false) {
+  } else {
       turning = false;
       kP = val2;
       desiredTurnValue = 0;
@@ -30,7 +30,7 @@ void setPID(bool isTurning, double val1) {
     turning = true;
     desiredValue = 0;
     desiredTurnValue = val1;
-  } else if (isTurning == false) {
+  } else {
       turning = false;
       desiredTurnValue = 0;
       desiredValue = val1;
