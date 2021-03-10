@@ -63,9 +63,8 @@ extern double customTimerArc;
 extern int auton_sel;
 
 // autonomous selector variables
-extern bool isSkills;
-extern bool startRight;
 extern int compAutoSelector;
+extern bool driverControl;
 
 // Display non-return funtions
 void controllerShake();

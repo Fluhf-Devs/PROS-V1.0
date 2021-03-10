@@ -8,9 +8,6 @@ void controllerShake() {
 int controllerScreen() {
   while(true) {
 
-
-
-
     pros::delay(115);
   }
 

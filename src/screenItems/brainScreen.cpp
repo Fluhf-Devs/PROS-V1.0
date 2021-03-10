@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 // variables
-int customTimer = 60;
+int customTimer = 0;
 double dummy = 0;
 int customTimerStart = 0;
 double drivetrainTemp = 0;
@@ -22,7 +22,7 @@ static lv_obj_t *g_sb_label;  // sb text label
 
 
 int customTimerWorker() {
-  while(true) {
+  while(pros::competition::is_autonomous() || driverControl == true) {
     if(customTimer > 0) {
       std::cout << customTimer << std::endl;
       customTimer--;
