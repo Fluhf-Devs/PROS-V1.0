@@ -1,5 +1,6 @@
 #include "main.h"
 #include "devices.h"
+#include "selection.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>

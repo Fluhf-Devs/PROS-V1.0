@@ -1,5 +1,6 @@
 #include "main.h"
 #include "devices.h"
+#include "selection.h"
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -9,8 +10,8 @@
  */
 
 void initialize() {
-	// display LVGL screen stuff
-	gui();
+	// display stuff
+	selector::init();
 	// run all necessary tasks
 	pros::Task controllerDrive(controllerDriveControl);
 	pros::Task PID(drivePID);
