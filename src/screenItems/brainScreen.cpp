@@ -13,7 +13,7 @@ double batteryCapacity = 0;
 bool button1Toggle = false;
 bool button2Toggle = false;
 bool startRight = false;
-int auton_sel = 0;
+int auton_sel = 5;
 
 // LVGL variables
 static lv_obj_t *g_btn_region; //tab view region of the screen
@@ -22,7 +22,7 @@ static lv_obj_t *g_sb_label;  // sb text label
 
 
 int customTimerWorker() {
-  while(pros::competition::is_autonomous() || driverControl == true) {
+  while(true) {
     if(customTimer > 0) {
       std::cout << customTimer << std::endl;
       customTimer--;

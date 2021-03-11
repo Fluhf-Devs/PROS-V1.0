@@ -67,7 +67,6 @@ extern int auton_sel;
 
 // autonomous selector variables
 extern int compAutoSelector;
-extern bool driverControl;
 
 // Display non-return funtions
 void controllerShake();

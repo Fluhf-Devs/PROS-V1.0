@@ -1,12 +1,8 @@
 #include "main.h"
 #include "devices.h"
 
-// variables
-bool driverControl = false;
-
 
 void opcontrol() {
-	driverControl = true;
 	enableDrivePID = false;
 	while (true) {
 		if (master.get_digital(DIGITAL_R1)) {
