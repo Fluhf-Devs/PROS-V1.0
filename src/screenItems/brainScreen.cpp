@@ -18,7 +18,7 @@ int auton_sel = 5;
 // LVGL variables
 static lv_obj_t *g_btn_region; //tab view region of the screen
 static lv_obj_t *g_sb_region; //status bar region of the screen
-static lv_obj_t *g_sb_label;  // sb text label
+static lv_obj_t *g_sb_label;  // sb text label 
 
 
 int customTimerWorker() {
