@@ -29,31 +29,4 @@ void autonomous() {
   // run pre-autonomous
   pre_Auton();
 
-  // select which autonomous to run
-  switch (auton_sel) {
-  // red right auton
-  case 1:
-
-    break;
-  // red left auton
-  case 2:
-
-    break;
-  // blue right auton
-  case 3:
-
-    break;
-  // blue left auton
-  case 4:
-
-    break;
-  // SkillsAuton1
-  case 5:
-    skillsAdvancedAuto();
-    break;
-  // SkillsAuton2
-  case 6:
-
-    break;
-  }
 }
